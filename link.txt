@@ -1,1 +1,2 @@
-URL: 
+git:                https://github.com/Nicolay01/parcial2web/tree/main
+sitio desplegado:   https://nicolay01.github.io/parcial2web/
