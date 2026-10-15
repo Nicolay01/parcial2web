@@ -29,18 +29,22 @@ body {
 
 .encabezado {
   margin-bottom: 24px;
+  padding: 22px 24px;
+  border-left: 6px solid var(--acento);
+  border-radius: 8px;
+  background: var(--primario);
 }
 
 h1 {
   margin: 0 0 4px;
-  color: var(--primario);
+  color: #fff;
   font-size: 30px;
 }
 
 .encabezado p,
 footer {
   margin: 0;
-  color: var(--texto-suave);
+  color: #e2eeee;
 }
 
 .panel {
@@ -49,6 +53,7 @@ footer {
   border: 1px solid var(--borde);
   border-radius: 8px;
   background: var(--superficie);
+  box-shadow: 0 2px 8px rgb(32 72 77 / 6%);
 }
 
 h2 {
@@ -192,6 +197,15 @@ td .boton-eliminar:hover {
   background: #87403b;
 }
 
+td button[data-accion="editar"] {
+  border-color: #397b62;
+  background: #397b62;
+}
+
+td button[data-accion="editar"]:hover {
+  background: #2c644e;
+}
+
 .cantidad {
   margin: 10px 0 0;
   color: var(--texto-suave);
@@ -232,7 +246,7 @@ footer {
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .campos {
@@ -243,5 +257,124 @@ footer {
   input,
   button {
     font-size: 16px;
+  }
+
+  .encabezado {
+    margin-bottom: 16px;
+    padding: 18px 16px;
+  }
+
+  .panel {
+    margin-bottom: 14px;
+    padding: 14px;
+  }
+
+  .lista-encabezado h2 {
+    margin-bottom: 12px;
+  }
+
+  .tabla-contenedor {
+    overflow: visible;
+  }
+
+  table,
+  tbody {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  tbody {
+    display: grid;
+    gap: 10px;
+  }
+
+  tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 12px;
+    padding: 6px 11px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    background: #fff;
+  }
+
+  tbody tr:nth-child(even),
+  tbody tr:hover {
+    background: #fff;
+  }
+
+  tbody td {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border: 0;
+    border-bottom: 1px solid #e8efed;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+  }
+
+  tbody td::before {
+    flex: 0 0 auto;
+    color: var(--texto-suave);
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  tbody td:nth-child(1),
+  tbody td:nth-child(2),
+  tbody td:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  tbody td:nth-child(1) {
+    color: var(--primario);
+    font-weight: 600;
+  }
+
+  tbody td:nth-child(4) {
+    border-bottom: 0;
+  }
+
+  tbody td:nth-child(5) {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 5px;
+    border-bottom: 0;
+  }
+
+  tbody td button {
+    min-height: 34px;
+    margin: 0;
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+
+  tbody tr:has(td[colspan]) {
+    display: block;
+  }
+
+  tbody td[colspan] {
+    display: block;
+    border: 0;
+    text-align: center;
+  }
+
+  tbody td[colspan]::before {
+    content: none;
   }
 }
