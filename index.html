@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel sencillo para gestionar una lista de usuarios." />
+    <title>Gestión de usuarios</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <header class="encabezado">
+        <h1>Gestión de usuarios</h1>
+        <p>Consulta y administra los usuarios del directorio.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="formulario-titulo">
+        <h2 id="formulario-titulo">Agregar usuario</h2>
+        <form id="formulario" novalidate>
+          <div class="campos">
+            <div class="campo">
+              <label for="id">ID</label>
+              <input id="id" name="id" type="number" step="1" placeholder="Ejemplo: 11" required />
+            </div>
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Nombre completo" required />
+            </div>
+            <div class="campo">
+              <label for="correo">Correo</label>
+              <input id="correo" name="correo" type="email" placeholder="nombre@correo.com" required />
+            </div>
+            <div class="campo">
+              <label for="ciudad">Ciudad</label>
+              <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad" required />
+            </div>
+          </div>
+          <div class="botones-formulario">
+            <button id="boton-enviar" type="submit">Agregar</button>
+            <button id="boton-cancelar" class="boton-secundario" type="button" hidden>Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="lista-titulo">
+        <div class="lista-encabezado">
+          <h2 id="lista-titulo">Lista de usuarios</h2>
+          <div class="busqueda">
+            <label for="buscar">Buscar por nombre</label>
+            <input id="buscar" type="search" placeholder="Escribe un nombre..." />
+          </div>
+        </div>
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite">Cargando...</p>
+        <div class="tabla-contenedor">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="lista-usuarios"></tbody>
+          </table>
+        </div>
+        <p id="cantidad" class="cantidad"></p>
+      </section>
+      <footer>Los cambios se mantienen mientras esta página está abierta.</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
